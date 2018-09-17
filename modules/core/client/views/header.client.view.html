@@ -1,13 +1,13 @@
 <md-toolbar class="md-primary md-hue-2 app-header">
 	<div class="md-toolbar-tools" flex-offset-lg="5" flex-lg="90" flex-offset-xl="15" flex-xl="70">
-		<md-button ng-click="toggleLeft()" class="md-icon-button" hide-gt-sm>
+		<md-button ng-click="toggleLeft()" class="md-icon-button">
 			<md-icon>menu</md-icon>
 		</md-button>
 		<md-truncate flex class="home-title">{{headerTitle}}
 			<md-tooltip>{{headerTitle}}</md-tooltip>
 		</md-truncate>
 
-		<div flex="auto" layout="column" hide show-gt-sm>
+		<div flex="auto" layout="column" hide>
 			<md-input-container md-no-float class="md-block search-input simple" md-no-asterisk ng-if="!$state.includes('home')">
 				<md-autocomplete md-no-cache="true" md-clear-button="false" placeholder="Search" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in results" md-search-text-change="searchAll(searchText)" md-item-text="getItemTitle(item)" md-delay="300"
 				    md-min-length="1">
@@ -28,8 +28,12 @@
 
 		<!-- <span flex></span> -->
 
-		<md-button hide-gt-sm aria-label="Show mobile search" class="md-icon-button" ng-click="openSearch()">
+		<md-button aria-label="Show search" class="md-icon-button" ng-click="openSearch()">
 			<md-icon>search</md-icon>
+		</md-button>
+
+		<md-button ng-show="!authentication.user" aria-label="Sign In" class="md-raised" ui-sref="authentication.signin" md-colors="{color: 'grey-A200', 'background': 'default-warn'}" class="md-accent md-hue-1">
+			Sign In
 		</md-button>
 
 		<md-menu ng-show="authentication.user">
@@ -61,7 +65,7 @@
 	</div>
 </md-toolbar>
 
-<md-toolbar class="md-primary" layout-padding ng-if="searchOpen" hide-gt-sm>
+<md-toolbar class="md-primary" layout-padding ng-if="searchOpen">
 	<md-input-container flex="auto" md-no-float class="md-block search-input simple" md-no-asterisk>
 		<md-autocomplete md-no-cache="true" md-clear-button="false" placeholder="Search" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in results" md-search-text-change="searchAll(searchText)" md-item-text="getItemTitle(item)" md-delay="300"
 		    md-min-length="1">
