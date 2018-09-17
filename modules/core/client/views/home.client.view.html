@@ -17,11 +17,20 @@
 <!-- <div><img style="width:100%" src="modules/core/client/img/home.png"></div> -->
 <div class="home-container">
 	<div class="home-search-banner" layout="column" layout-align="center center">
-		<h1 class="title-text">
-      What matters to you?
-    </h1>
+		<div class="banner-logo-wrapper">
+			<h2 class="title-text">
+				<img src="modules/core/client/img/brand/uqu-logo.png" alt="UQ Union" />
+	      ELECTION
+	    </h2>
+		</div>
 
-		<md-input-container md-no-float class="md-block search-input home-search simple " md-no-asterisk>
+		<h1 class="title-text">Sign up and have your say</h1>
+
+		<a class="authenticationsignup" ng-if="!authentication.user" ui-sref="authentication.signup" layout="row" layout-align="center center">
+			<img src="modules/core/client/img/join.png" flex-xs="50" flex-sm="33" flex="15">
+		</a>
+
+		<!-- <md-input-container md-no-float class="md-block search-input home-search simple " md-no-asterisk>
 			<md-autocomplete md-no-cache="true" md-clear-button="false" placeholder="Search" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in results" md-search-text-change="searchAll(searchText)" md-item-text="getItemTitle(item)" md-delay="300" md-min-length="1">
 
 				<md-item-template>
@@ -35,13 +44,9 @@
 				</md-not-found>
 			</md-autocomplete>
 
-		</md-input-container>
+		</md-input-container> -->
 
 	</div>
-
-	<a class="authenticationsignup" ng-if="!authentication.user" ui-sref="authentication.signup" layout="row" layout-align="center center">
-		<img src="modules/core/client/img/join.png" flex-xs="50" flex-sm="33" flex="15">
-	</a>
 
 	<md-content>
 		<div class="md-toolbar transparent" flex="90" flex-offset="5">

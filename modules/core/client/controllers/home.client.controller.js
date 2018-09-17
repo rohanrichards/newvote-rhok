@@ -68,6 +68,8 @@ angular.module('core')
 				$scope.message = !$scope.message;
 			};
 
+			$scope.shouldLeftBeOpen = $mdMedia('gt-sm');
+
 			$scope.toggleLeft = function () {
 				$mdSidenav('left')
 					.toggle();
